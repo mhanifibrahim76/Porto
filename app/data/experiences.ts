@@ -17,6 +17,6 @@ export const experiences: ShowcaseItem[] = [
   title: "Graduate of Information Technology",
   subtitle: "CCIT FTUI | 2023 - 2025",
   desc: "Graduated with a focus on software development, web technologies, and user-centered design, supported by practical project experience.",
-  image: "/experience/Study_Ccitftui1.jpg",
+  image: "/experience/ccit.png",
 }
 ];
