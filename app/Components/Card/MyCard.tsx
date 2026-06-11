@@ -11,7 +11,7 @@ const MyCard = () => {
         <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[var(--secondary)] shadow-[0_0_30px_rgba(167,139,250,0.35)]">
           <div className="w-full h-full bg-gray-300">
             <Image
-              src="/profile.jpg"
+              src="/profile1.jpg"
               alt="Profile Picture"
               width={160}
               height={160}
