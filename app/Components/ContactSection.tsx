@@ -46,9 +46,9 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="no-print bg-transparent overflow-x-clip"
+      className="no-print bg-transparent overflow-x-clip lg:min-h-[100dvh] flex flex-col justify-center"
     >
-      <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 pb-16 sm:pb-20">
+      <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-16">
         <SectionConnector
           index="04"
           label="Correspondence"

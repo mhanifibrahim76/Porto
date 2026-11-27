@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { MegaMendungCloud } from "./BatikOrnaments";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { MegaMendungCluster } from "./BatikOrnaments";
 
 const TAPESTRY_HORIZONS = [
-  { topClass: "top-[16%]", widthClass: "w-[260px] sm:w-[360px] lg:w-[440px]" },
-  { topClass: "top-[42%]", widthClass: "w-[240px] sm:w-[340px] lg:w-[420px]" },
-  { topClass: "top-[68%]", widthClass: "w-[260px] sm:w-[360px] lg:w-[440px]" },
-  { topClass: "top-[90%]", widthClass: "w-[240px] sm:w-[320px] lg:w-[400px]" },
+  { topClass: "top-[15%]" },
+  { topClass: "top-[40%]" },
+  { topClass: "top-[66%]" },
+  { topClass: "top-[88%]" },
 ];
 
 const SideSulurThread = ({ mirror = false }: { mirror?: boolean }) => (
@@ -37,43 +37,51 @@ const SideSulurThread = ({ mirror = false }: { mirror?: boolean }) => (
 const MegaMendungTapestry = () => {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const driftY = useTransform(scrollYProgress, [0, 1], [-42, 42]);
+  const scaleX = useSpring(scrollYProgress, { stiffness: 160, damping: 28, restDelta: 0.001 });
+  const driftY = useTransform(scrollYProgress, [0, 1], [-55, 55]);
 
   return (
-    <div
-      aria-hidden="true"
-      className="no-print pointer-events-none absolute inset-0 z-0 overflow-hidden"
-    >
-      {/* Continuous symmetrical vertical sulur lines linking all horizons down both margins */}
-      <div className="absolute inset-y-0 left-2 sm:left-5 lg:left-8">
-        <SideSulurThread />
-      </div>
-      <div className="absolute inset-y-0 right-2 sm:right-5 lg:right-8">
-        <SideSulurThread mirror />
-      </div>
-
-      {/* Symmetrical pairs of layered Mega Mendung clouds flowing between sections */}
+    <>
+      {/* Top golden scroll progress thread */}
       <motion.div
-        style={prefersReducedMotion ? undefined : { y: driftY }}
-        className="relative w-full h-full"
-      >
-        {TAPESTRY_HORIZONS.map((horizon) => (
-          <React.Fragment key={horizon.topClass}>
-            <div
-              className={`absolute ${horizon.topClass} -left-36 sm:-left-28 lg:-left-24 xl:-left-12 opacity-[0.14] sm:opacity-[0.19]`}
-            >
-              <MegaMendungCloud className={`${horizon.widthClass} h-auto`} />
-            </div>
+        aria-hidden="true"
+        style={{ scaleX, transformOrigin: "0% 50%" }}
+        className="no-print fixed top-0 left-0 right-0 h-[2px] z-50 bg-gradient-to-r from-[#9E7B32] via-[#E5C878] to-[#D4AF5A] pointer-events-none"
+      />
 
-            <div
-              className={`absolute ${horizon.topClass} -right-36 sm:-right-28 lg:-right-24 xl:-right-12 opacity-[0.14] sm:opacity-[0.19] -scale-x-100`}
-            >
-              <MegaMendungCloud className={`${horizon.widthClass} h-auto`} />
-            </div>
-          </React.Fragment>
-        ))}
-      </motion.div>
-    </div>
+      <div
+        aria-hidden="true"
+        className="no-print pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      >
+        <div className="absolute inset-y-0 left-2 sm:left-5 lg:left-8">
+          <SideSulurThread />
+        </div>
+        <div className="absolute inset-y-0 right-2 sm:right-5 lg:right-8">
+          <SideSulurThread mirror />
+        </div>
+
+        <motion.div
+          style={prefersReducedMotion ? undefined : { y: driftY }}
+          className="relative w-full h-full"
+        >
+          {TAPESTRY_HORIZONS.map((horizon) => (
+            <React.Fragment key={horizon.topClass}>
+              <div
+                className={`absolute ${horizon.topClass} -left-48 sm:-left-40 lg:-left-36 xl:-left-24 opacity-[0.16] sm:opacity-[0.22]`}
+              >
+                <MegaMendungCluster />
+              </div>
+
+              <div
+                className={`absolute ${horizon.topClass} -right-48 sm:-right-40 lg:-right-36 xl:-right-24 opacity-[0.16] sm:opacity-[0.22] -scale-x-100`}
+              >
+                <MegaMendungCluster />
+              </div>
+            </React.Fragment>
+          ))}
+        </motion.div>
+      </div>
+    </>
   );
 };
 

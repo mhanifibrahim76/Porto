@@ -29,12 +29,12 @@ Reading this as: personal engineering and UI/UX portfolio for hiring managers at
 | `--secondary` | `#E5C878` | Highlight gold for labels & active states | `11.56:1` on `#12110F` (PASS AA) |
 
 ## Typography (R-06)
-- **Display Serif (`Cormorant Garamond`, 600 / 700 / italic):** High-contrast calligraphic strokes echo *canting* batik wax linework and editorial craft, pairing cultural identity with refined hierarchy.
+- **Display Serif (`Philosopher`, 400 / 700 / italic):** Curved, flared calligraphic terminals echo traditional batik and Javanese heritage lettering while remaining crisp and legible at display sizes.
 - **UI Sans (`Plus Jakarta Sans`, 400 / 500 / 600 / 700):** Created by Indonesian type foundry Tokotype; delivers crisp geometric legibility for technical summaries, dates, and interactive controls.
 - **Scale:** Fluid `clamp()` display headings (`clamp(2.35rem, 4.6vw, 3.6rem)` for H1, `clamp(1.95rem, 3.6vw, 3rem)` for H2) so mobile and desktop proportions scale smoothly without clipping at 200% zoom.
 
 ## Identity Motif & Connected Thread
-- Six-layer parallel-contour *Mega Mendung* vector clouds (`MegaMendungCloud`) with inward *ukel* spiral curls bridge every section down a central `1px` champagne-gold spine (`01`, `02`, `03`, `04`) while mirrored large cloud formations and vertical *sulur* wave threads flow smoothly down both margins as the user scrolls (`MegaMendungTapestry`).
+- Overlapping *Mega Mendung* cloud clusters (`MegaMendungCluster`) with stepped obsidian depth layers and opposing diagonal gold spiral ribbons bridge every section down a central `1px` champagne-gold spine (`01`, `02`, `03`, `04`), while mirrored animated cloud clusters and vertical *sulur* wave threads flow smoothly down both margins as the user scrolls (`MegaMendungTapestry`).
 
 ## One-Line Visual Decisions (R-31)
 - **Color:** Smoked obsidian and a single brushed champagne-gold accent evoke *Batik Prada* craft while maximizing readability and focus (`R-01`, `R-29`).

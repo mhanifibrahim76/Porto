@@ -22,7 +22,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative bg-transparent overflow-x-clip flex flex-col justify-between"
+      className="relative bg-transparent overflow-x-clip lg:min-h-[100dvh] flex flex-col justify-center"
     >
       {/* Flowing 3D gold mist faded smoothly at bottom so the scroll tapestry shows seamlessly */}
       <div
@@ -39,7 +39,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="relative z-10 no-print w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 pt-16 sm:pt-24 lg:pt-28 pb-2">
+      <div className="relative z-10 no-print w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-20 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] items-center gap-10 lg:gap-16">
           {/* Left column: 3D Tilt Profile Card */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
