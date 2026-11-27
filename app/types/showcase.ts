@@ -22,5 +22,6 @@ export interface ExperienceItem {
   desc: string;
   highlights: string[];
   image: string;
+  imagePosition?: string;
   tags?: string[];
 }

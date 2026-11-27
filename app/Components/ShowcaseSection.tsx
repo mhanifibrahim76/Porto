@@ -64,10 +64,11 @@ const ShowcaseSection = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-16">
         <SectionConnector
-          index="03"
+          index="Chapter III"
           label="Selected Works"
-          title="Projects & Certifications"
+          title="Products built from concept to code"
           subtitle="Production web applications, cross-platform Flutter builds, and interactive UI/UX design systems."
+          watermark="III"
         />
 
         {/* Symmetrical tab and category control bar */}

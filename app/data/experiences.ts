@@ -14,6 +14,7 @@ export const experiences: ExperienceItem[] = [
       "Standardized layout spacing and mobile usability across primary property discovery flows.",
     ],
     image: "/experience/Intern_Propertree.jpg",
+    imagePosition: "50% 56%",
     tags: ["Next.js", "React", "Tailwind CSS", "REST API"],
   },
   {
@@ -28,6 +29,7 @@ export const experiences: ExperienceItem[] = [
       "Collaborated in student engineering teams using Git workflows and UI/UX design handoffs from Figma.",
     ],
     image: "/experience/Komandro_staff.png",
+    imagePosition: "50% 44%",
     tags: ["Next.js", "React", "Git", "Figma"],
   },
   {
@@ -42,6 +44,7 @@ export const experiences: ExperienceItem[] = [
       "Competed in national UI/UX design competitions (CITE UP and INVENTION).",
     ],
     image: "/experience/ccit.png",
+    imagePosition: "50% 18%",
     tags: ["Software Engineering", "Web & Mobile", "UI/UX"],
   },
 ];

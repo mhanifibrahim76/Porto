@@ -50,10 +50,11 @@ const ContactSection = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-16">
         <SectionConnector
-          index="04"
-          label="Correspondence"
-          title="Let's Work Together"
+          index="Epilogue"
+          label="Next Chapter"
+          title="Let's build something together"
           subtitle="Have a Frontend or Product Engineering role in mind, or want to collaborate on a product build? Send a direct note below."
+          watermark="IV"
         />
 
         {/* Symmetrical 50:50 equal-height dual card grid */}

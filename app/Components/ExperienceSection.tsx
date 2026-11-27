@@ -23,48 +23,49 @@ const ExperienceSection = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-16">
         <SectionConnector
-          index="02"
-          label="Track Record"
-          title="Experience & Education"
-          subtitle="Hands-on frontend engineering in production, community leadership, and formal IT training."
+          index="Chapter II"
+          label="Fieldwork"
+          title="Building in production, community, and university"
+          subtitle="Applying frontend engineering from real estate platforms to campus study groups and formal IT training."
+          watermark="II"
         />
 
         <div className="space-y-6">
           {experiences.map((item, idx) => (
             <motion.article
               key={item.id}
-              initial={prefersReducedMotion ? undefined : { opacity: 0, y: 24 }}
+              initial={prefersReducedMotion ? undefined : { opacity: 0, y: 28 }}
               whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.18 }}
-              transition={{ duration: 0.45, delay: idx * 0.08, ease: "easeOut" }}
-              className="group rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface)] hover:border-[var(--primary)]/60 transition-colors overflow-hidden"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.48, delay: idx * 0.08, ease: "easeOut" }}
+              className="group rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface)] hover:border-[var(--primary)]/60 transition-colors p-5 sm:p-7"
             >
-              <div className="grid grid-cols-1 md:grid-cols-[270px_1fr] lg:grid-cols-[310px_1fr]">
-                {/* Left visual showcase frame */}
-                <div className="relative aspect-[16/10] md:aspect-auto md:min-h-[220px] bg-[var(--background)] border-b md:border-b-0 md:border-r border-[var(--border-subtle)] overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.organization}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 310px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-[#0A0A09]/85 via-[#0A0A09]/20 to-transparent"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
-                    <span className="px-2.5 py-1 rounded-lg bg-[#0A0A09]/85 border border-[var(--border-control)] text-[11px] font-semibold text-[var(--primary)]">
+              <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] lg:grid-cols-[276px_1fr] gap-6 md:gap-8 items-start">
+                {/* Left column: fixed 3:2 photo frame preventing horizontal clipping */}
+                <div className="flex flex-col gap-3.5">
+                  <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden bg-[var(--background)] border border-[var(--border-subtle)]">
+                    <Image
+                      src={item.image}
+                      alt={item.organization}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 276px"
+                      style={{ objectPosition: item.imagePosition ?? "50% 50%" }}
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 px-1">
+                    <span className="text-xs font-semibold text-[var(--primary)]">
                       {typeLabels[item.type]}
                     </span>
-                    <span className="px-2.5 py-1 rounded-lg bg-[#0A0A09]/85 border border-[var(--border-subtle)] text-[11px] font-medium text-[var(--foreground)]">
+                    <span className="px-2.5 py-0.5 rounded-md bg-[var(--background)] border border-[var(--border-subtle)] text-xs font-medium text-[var(--foreground-secondary)]">
                       {item.period}
                     </span>
                   </div>
                 </div>
 
-                {/* Right editorial role details */}
-                <div className="p-6 sm:p-7 flex flex-col justify-between">
+                {/* Right column: editorial role details */}
+                <div className="flex flex-col justify-between h-full">
                   <div>
                     <h3 className="font-display text-2xl sm:text-[1.7rem] font-bold text-[var(--foreground)] leading-snug">
                       {item.role}

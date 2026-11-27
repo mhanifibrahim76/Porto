@@ -42,12 +42,26 @@ const HeroSection = () => {
       <div className="relative z-10 no-print w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-20 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] items-center gap-10 lg:gap-16">
           {/* Left column: 3D Tilt Profile Card */}
-          <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="order-2 lg:order-1 flex justify-center lg:justify-start"
+          >
             <MyCard onOpenResume={() => setResumeOpen(true)} />
-          </div>
+          </motion.div>
 
           {/* Right column: Editorial Introduction */}
-          <div className="order-1 lg:order-2 flex flex-col gap-5 text-center lg:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+            className="order-1 lg:order-2 flex flex-col gap-5 text-center lg:text-left"
+          >
+            <p className="font-display italic text-lg text-[var(--primary)] tracking-wide">
+              Prologue · {profile.name}
+            </p>
+
             <h1 className="font-display font-bold text-[clamp(2.35rem,4.6vw,3.65rem)] leading-[1.08] tracking-tight text-[var(--foreground)]">
               Crafting fast, intuitive web products.
             </h1>
@@ -96,13 +110,25 @@ const HeroSection = () => {
                 Inspect Resume
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Spine origin node connecting Hero directly down into Section 01 */}
-        <div aria-hidden="true" className="mt-14 sm:mt-16 flex flex-col items-center">
-          <div className="w-2.5 h-2.5 rotate-45 border border-[var(--primary)] bg-[var(--background)]" />
-          <div className="w-px h-10 bg-gradient-to-b from-[var(--primary)]/70 to-[var(--primary)]/20" />
+        {/* Storytelling cue leading reader into Chapter I */}
+        <div className="mt-12 sm:mt-14 flex flex-col items-center">
+          <a
+            href="#about"
+            className="min-h-[44px] px-4 inline-flex flex-col items-center gap-2 text-xs font-medium text-[var(--muted)] hover:text-[var(--primary)] transition-colors"
+          >
+            <span>Scroll to begin Chapter I</span>
+            <span
+              aria-hidden="true"
+              className="w-2.5 h-2.5 rotate-45 border border-[var(--primary)] bg-[var(--background)]"
+            />
+          </a>
+          <div
+            aria-hidden="true"
+            className="w-px h-10 bg-gradient-to-b from-[var(--primary)]/70 to-[var(--primary)]/20"
+          />
         </div>
       </div>
 

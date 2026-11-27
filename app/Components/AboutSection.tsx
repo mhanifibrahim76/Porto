@@ -15,10 +15,11 @@ const AboutSection = () => {
     >
       <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 py-14 sm:py-16">
         <SectionConnector
-          index="01"
-          label="Profile & Craft"
-          title="Engineering clarity paired with visual craft"
-          subtitle="Combining component discipline in Next.js and TypeScript with structured product design."
+          index="Chapter I"
+          label="Foundations"
+          title="Where engineering clarity meets visual craft"
+          subtitle="Every product begins with clear structure, readable code, and interfaces people understand immediately."
+          watermark="I"
         />
 
         {/* Symmetrical centered editorial narrative */}
