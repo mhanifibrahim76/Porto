@@ -1,37 +1,81 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f0f0f;
-  --primary: #7c3aed;
-  --secondary: #a78bfa;
-}
-
-.dark {
-  --background: #0b0b0f;
-  --foreground: #f3f4f6;
-  --primary: #8b5cf6;
-  --secondary: #c4b5fd;
+  --background: #0a0a09;
+  --surface: #12110f;
+  --surface-elevated: #1a1814;
+  --foreground: #f5f2eb;
+  --foreground-secondary: #b5ada0;
+  --chip-text: #e6e0d4;
+  --muted: #8c8272;
+  --border-subtle: #26221c;
+  --border-control: #6e6555;
+  --primary: #d4af5a;
+  --accent-gold-hover: #e0be6e;
+  --secondary: #e5c878;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-chip-text: var(--chip-text);
+  --color-muted: var(--muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-control: var(--border-control);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-bottom: 7rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-sheet {
+    position: static !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  .print-sheet * {
+    color: #111111 !important;
+    border-color: #d1d5db !important;
+  }
 }

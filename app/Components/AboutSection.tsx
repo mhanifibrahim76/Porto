@@ -1,92 +1,75 @@
 import React from "react";
+import { SectionConnector } from "./Batik/BatikOrnaments";
+import { profile } from "../data/profile";
 
 const AboutSection = () => {
   return (
-    <section
-      id="about"
-      className="min-h-screen bg-[var(--background)] flex items-center overflow-hidden"
-    >
-      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-24">
+    <section id="about" className="no-print bg-transparent overflow-x-clip">
+      <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-24 pb-16 sm:pb-20">
+        <SectionConnector
+          index="01"
+          label="Profile & Craft"
+          title="Engineering clarity paired with visual craft"
+          subtitle="Combining component discipline in Next.js and TypeScript with structured product design."
+        />
 
-        {/* HEADER */}
-        <div className="mb-12">
-          
-          <h2 className="text-[var(--secondary)] uppercase tracking-[0.3em] text-sm font-medium">
-            About Me
-          </h2>
-
-          <div className="relative inline-block mt-4">
-            
-            {/* Glow */}
-            <div className="absolute w-[60%] h-[120%] -left-4 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] opacity-40 blur-2xl rounded-full"></div>
-
-            <h1 className="relative text-5xl md:text-6xl font-black leading-tight">
-              Building modern digital experiences.
-            </h1>
-          </div>
-        </div>
-
-        {/* DESCRIPTION */}
-        <div className="space-y-6 text-gray-400 text-lg leading-relaxed max-w-4xl">
-
+        {/* Editorial 2-column narrative */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 text-[var(--foreground-secondary)] text-base sm:text-[1.05rem] leading-relaxed mb-12">
           <p>
-            Hi, I&apos;m <span className="text-white font-semibold">Muhammad Hanif Ibrahim</span>,
-            a passionate Web Developer focused on building responsive,
-            interactive, and scalable web applications using modern
-            technologies such as Next.js, React, Tailwind CSS, Firebase,
-            and Flutter.
-          </p>
-
-          <p>
-            Beyond development, I also enjoy working as a Web Designer.
-            I love transforming ideas into visually appealing interfaces,
-            creating clean layouts, thoughtful user flows, and intuitive
-            experiences that help users interact comfortably with digital
-            products.
-          </p>
-
-          <p>
-            My goal is to bridge functionality and aesthetics — developing
-            products that not only work efficiently but also deliver a
-            memorable user experience through modern design and smooth
-            interactions.
-          </p>
-        </div>
-
-        {/* SKILLS */}
-        <div className="mt-12 flex flex-wrap gap-4">
-
-          {[
-            "Next.js",
-            "React",
-            "Tailwind CSS",
-            "Firebase",
-            "Flutter",
-            "Figma",
-            "UI Design",
-            "UX Design",
-          ].map((skill) => (
-            <span
-              key={skill}
-              className="
-                px-5 py-2
-                rounded-full
-                border
-                border-[var(--secondary)]
-                bg-white/5
-                backdrop-blur-sm
-                transition-all
-                duration-300
-                hover:bg-[var(--primary)]
-                hover:border-[var(--primary)]
-                hover:shadow-[0_0_20px_rgba(124,58,237,0.35)]
-              "
-            >
-              {skill}
+            I am{" "}
+            <span className="text-[var(--foreground)] font-semibold">
+              {profile.name}
             </span>
+            , an Information Technology graduate from{" "}
+            <span className="text-[var(--foreground)] font-medium">
+              CCIT FTUI
+            </span>{" "}
+            and former Frontend Developer Intern at{" "}
+            <span className="text-[var(--foreground)] font-medium">
+              Propertree Group
+            </span>
+            . I focus on building fast, responsive, and maintainable web
+            applications using Next.js, React, TypeScript, and Tailwind CSS.
+          </p>
+
+          <p>
+            Alongside engineering, I bring practical UI/UX design experience in
+            Figma. That overlap lets me translate design systems accurately into
+            production components, spot usability friction early, and collaborate
+            clearly with both product designers and backend engineers.
+          </p>
+        </div>
+
+        {/* Unified 3-column architectural capability ledger */}
+        <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface)] grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[var(--border-subtle)]">
+          {profile.skills.map((group) => (
+            <div key={group.label} className="p-6 sm:p-7 flex flex-col">
+              <div className="flex items-baseline justify-between gap-2 mb-3">
+                <h3 className="font-display text-2xl font-bold text-[var(--foreground)]">
+                  {group.label}
+                </h3>
+                <span className="font-display italic text-lg text-[var(--primary)]">
+                  {group.roman}
+                </span>
+              </div>
+
+              <p className="text-sm text-[var(--foreground-secondary)] leading-relaxed mb-5">
+                {group.scope}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {group.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 text-xs font-medium rounded-lg border border-[#3A342B] bg-[var(--background)] text-[var(--chip-text)]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-
       </div>
     </section>
   );

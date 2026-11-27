@@ -1,45 +1,60 @@
 import { ShowcaseItem } from "../types/showcase";
 
 export const projects: ShowcaseItem[] = [
-    {
+  {
+    id: "coffee-shop-management",
     title: "Coffee Shop Management",
-    subtitle: "Web Application • API Integration",
-    desc: "A coffee shop management system that handles menu inventory, cashier and administrator management, and operational workflows through API-based architecture. Designed to streamline daily business operations and stock monitoring.",
+    subtitle: "Web Application · REST API",
+    category: "web",
+    featured: true,
+    desc: "Operational dashboard for menu inventory, role-based cashier and administrator workflows, and real-time stock monitoring built on a REST API architecture.",
     image: "/projects/Api.png",
+    tags: ["React", "REST API", "Tailwind CSS", "Role-Based UI"],
   },
-
   {
-    title: "FitPulse",
-    subtitle: "UI/UX Design • Figma",
-    desc: "A fitness and healthy lifestyle mobile application designed in Figma. Features include a run tracker, heart rate monitoring, workout planner, and daily activity summary to help users maintain a healthier lifestyle.",
-    image: "/projects/Figma_Fitpulse.png",
-  },
-
-  {
-    title: "NeoLearn",
-    subtitle: "UI/UX Design • Figma",
-    desc: "An online learning platform designed in Figma, similar to modern e-learning applications. Users can access free and premium courses, purchase learning materials, and track their learning progress through a personalized dashboard.",
-    image: "/projects/Figma_Neolearn.png",
-  },
-
-  {
-    title: "StudyRoom Web",
-    subtitle: "HTML • CSS • JavaScript",
-    desc: "A web-based learning platform inspired by modern online education systems. Provides technology-related learning materials, course categorization, and progress tracking for students.",
-    image: "/projects/MobileApp_StudyRoom.png",
-  },
-
-  {
-    title: "StudyRoom Mobile",
-    subtitle: "Flutter • Mobile Application",
-    desc: "A mobile version of StudyRoom built with Flutter. Offers an accessible learning experience with course management, progress tracking, and educational content optimized for mobile devices.",
-    image: "/projects/StudyRoom.png",
-  },
-
-  {
+    id: "smartwaste",
     title: "SmartWaste",
-    subtitle: "Web Application • Sustainability",
-    desc: "A smart waste management platform that identifies recyclable waste through image scanning. The system provides recycling recommendations, DIY craft ideas from recyclable materials, and a community blog for sharing creative recycling projects.",
+    subtitle: "Web Application · Sustainability",
+    category: "web",
+    featured: true,
+    desc: "Waste management web application that identifies recyclable materials via image scanning, pairs items with recycling instructions and DIY guides, and hosts a community blog.",
     image: "/projects/Web_SmartWaste.png",
+    tags: ["Next.js", "Tailwind CSS", "Image Scanning", "UI/UX"],
+  },
+  {
+    id: "studyroom-web",
+    title: "StudyRoom Web",
+    subtitle: "Web Learning Platform",
+    category: "web",
+    desc: "Responsive e-learning web platform with structured technology courses, category filtering, and student progress tracking.",
+    image: "/projects/StudyRoom.png",
+    tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+  },
+  {
+    id: "studyroom-mobile",
+    title: "StudyRoom Mobile",
+    subtitle: "Flutter · Mobile Application",
+    category: "mobile",
+    desc: "Cross-platform mobile companion for StudyRoom built with Flutter, delivering course management and progress tracking tuned for mobile ergonomics.",
+    image: "/projects/MobileApp_StudyRoom.png",
+    tags: ["Flutter", "Dart", "Mobile UI", "Firebase"],
+  },
+  {
+    id: "fitpulse",
+    title: "FitPulse",
+    subtitle: "UI/UX Case Study · Figma",
+    category: "design",
+    desc: "Mobile fitness application concept designed in Figma with run tracking, heart-rate summaries, workout scheduling, and daily activity metrics.",
+    image: "/projects/Figma_Fitpulse.png",
+    tags: ["Figma", "Design System", "Mobile UX", "Prototyping"],
+  },
+  {
+    id: "neolearn",
+    title: "NeoLearn",
+    subtitle: "UI/UX Case Study · Figma",
+    category: "design",
+    desc: "E-learning product design covering course discovery, free and paid checkout flows, and a personalized learning progress dashboard.",
+    image: "/projects/Figma_Neolearn.png",
+    tags: ["Figma", "User Flow", "Wireframing", "UI Design"],
   },
 ];
